@@ -1,9 +1,7 @@
-// src/app/services/entidad.service.ts
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Entidad } from '../models/entidad.model';
+import { Entidad } from '../models/Entidad';
 
 @Injectable({
   providedIn: 'root'
