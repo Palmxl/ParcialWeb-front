@@ -1,11 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Contrato } from '../../models/Contrato';
+import { ContratoService } from '../../services/contrato.service';
+import { CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-contratos',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './contratos.component.html',
-  styleUrl: './contratos.component.css'
+  styleUrls: ['./contratos.component.css']
 })
-export class ContratosComponent {
+export class ContratosComponent implements OnInit {
 
+  contratos: Contrato[] = [];
+
+  constructor(private contratoService: ContratoService) {}
+
+  ngOnInit(): void {
+    this.cargarContratos();
+  }
+
+  cargarContratos(): void {
+    this.contratoService.getContratos().subscribe(data => {
+      this.contratos = data;
+    });
+  }
 }

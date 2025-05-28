@@ -1,0 +1,13 @@
+<h2>Crear Entidad</h2>
+
+<form (ngSubmit)="crearEntidad()">
+  <label for="nit">NIT:</label><br>
+  <input type="text" id="nit" [(ngModel)]="entidad.nit" name="nit"><br><br>
+
+  <label for="nombre">Nombre:</label><br>
+  <input type="text" id="nombre" [(ngModel)]="entidad.nombre" name="nombre"><br><br>
+
+  <button type="submit">Guardar</button>
+</form>
+
+<p>{{ mensaje }}</p>

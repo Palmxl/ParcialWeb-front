@@ -1,10 +1,8 @@
 import { Contrato } from "./Contrato";
 
-export class Entidad {
-    constructor(
-        public nit: string = '',
-        public nombre: string = '',
-        public contratos?: Contrato[],
-        public id?: number,
-    ) {}
+export interface Entidad {
+  id?: number;
+  nit: string;
+  nombre: string;
+  contratos?: Contrato[];
 }

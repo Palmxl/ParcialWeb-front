@@ -1,0 +1,36 @@
+<h2>Crear Contrato</h2>
+
+<form (ngSubmit)="crearContrato()">
+  <label for="identificador">Identificador:</label><br>
+  <input id="identificador" name="identificador" [(ngModel)]="contrato.identificador"><br><br>
+
+  <label for="valor">Valor:</label><br>
+  <input id="valor" type="number" name="valor" [(ngModel)]="contrato.valor"><br><br>
+
+  <label for="nombre_contratante">Nombre Contratante:</label><br>
+  <input id="nombre_contratante" name="nombre_contratante" [(ngModel)]="contrato.nombre_contratante"><br><br>
+
+  <label for="documento_contratante">Documento Contratante:</label><br>
+  <input id="documento_contratante" name="documento_contratante" [(ngModel)]="contrato.documento_contratante"><br><br>
+
+  <label for="nombre_contratista">Nombre Contratista:</label><br>
+  <input id="nombre_contratista" name="nombre_contratista" [(ngModel)]="contrato.nombre_contratista"><br><br>
+
+  <label for="documento_contratista">Documento Contratista:</label><br>
+  <input id="documento_contratista" name="documento_contratista" [(ngModel)]="contrato.documento_contratista"><br><br>
+
+  <label for="fecha_inicio">Fecha Inicio:</label><br>
+  <input id="fecha_inicio" type="date" name="fecha_inicio" [(ngModel)]="contrato.fecha_inicio"><br><br>
+
+  <label for="fecha_fin">Fecha Fin:</label><br>
+  <input id="fecha_fin" type="date" name="fecha_fin" [(ngModel)]="contrato.fecha_fin"><br><br>
+
+  <label for="entidad">Entidad:</label><br>
+  <select id="entidad" name="entidad" [(ngModel)]="contrato.entidad">
+    <option *ngFor="let e of entidades" [ngValue]="e">{{ e.nombre }}</option>
+  </select><br><br>
+
+  <button type="submit">Guardar</button>
+</form>
+
+<p>{{ mensaje }}</p>
